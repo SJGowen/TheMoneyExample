@@ -2,15 +2,15 @@
 
 namespace WyCash
 {
-    public record Dollar
+    public record Dollar : Money
     {
-        private int Amount;
-
-        public Dollar(int amount)
+        public Dollar(int amount) : base(amount)
         {
-            Amount = amount;
         }
 
-        public Dollar Times(int multiplier) => new(Amount * multiplier);
+        public Dollar Times(int multiplier)
+        {
+            return new Dollar(Amount * multiplier);
+        }
     }
 }

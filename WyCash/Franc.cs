@@ -2,15 +2,15 @@
 
 namespace WyCash
 {
-    public record Franc
+    public record Franc : Money
     {
-        private int Amount;
-
-        public Franc(int amount)
+        public Franc(int amount) : base(amount)
         {
-            Amount = amount;
         }
 
-        public Franc Times(int multiplier) => new(Amount * multiplier);
+        public Franc Times(int multiplier)
+        {
+            return new Franc(Amount * multiplier);
+        }
     }
 }
