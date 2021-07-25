@@ -2,7 +2,7 @@
 
 namespace WyCash
 {
-    public class Dollar
+    public record Dollar
     {
         public int Amount;
 
