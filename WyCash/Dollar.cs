@@ -11,6 +11,6 @@ namespace WyCash
             Amount = amount;
         }
 
-        public Dollar Times(int multiplier) => new Dollar(Amount * multiplier);
+        public Dollar Times(int multiplier) => new(Amount * multiplier);
     }
 }
