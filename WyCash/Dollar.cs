@@ -13,7 +13,7 @@ namespace WyCash
 
         public void Times(int multiplier)
         {
-            Amount = 10;
+            Amount *= multiplier;
         }
     }
 }
