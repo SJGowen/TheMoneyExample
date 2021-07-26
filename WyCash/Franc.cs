@@ -2,15 +2,15 @@
 {
     public record Franc : Money
     {
-        public Franc(int amount)
+        public Franc(int amount, string currency)
         {
             _Amount = amount;
-            _Currency = "CHF";
+            _Currency = currency;
         }
 
         public override Money times(int multiplier)
         {
-            return new Franc(_Amount * multiplier);
+            return Money.franc(_Amount * multiplier);
         }
     }
 }

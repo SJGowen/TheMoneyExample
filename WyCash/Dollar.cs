@@ -2,15 +2,15 @@
 {
     public record Dollar : Money
     {
-        public Dollar(int amount)
+        public Dollar(int amount, string currency)
         {
             _Amount = amount;
-            _Currency = "USD";
+            _Currency = currency;
         }
 
         public override Money times(int multiplier)
         {
-            return new Dollar(_Amount * multiplier);
+            return Money.dollar(_Amount * multiplier);
         }
     }
 }
