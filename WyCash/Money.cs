@@ -1,6 +1,6 @@
 ﻿namespace WyCash
 {
-    public abstract record Money
+    public record Money
     {
         protected int _Amount;
         protected string _Currency;
@@ -11,21 +11,42 @@
             _Currency = currency;
         }
 
-        public static Dollar dollar(int amount)
+        //// Definition of Equals and GetHashCode
+        //public override bool Equals(object obj)
+        //{
+        //    if (obj == null || GetType() != obj.GetType())
+        //    {
+        //        return false;
+        //    }
+
+        //    Money money = (Money)obj;
+        //    return _Amount == money._Amount && _Currency.Equals(money._Currency);
+        //}
+
+        //public override int GetHashCode()
+        //{
+        //    return base.GetHashCode();
+        //}
+
+        // Factory Methods for creating Dollar and Franc
+        public static Money Dollar(int amount)
         {
-            return new Dollar(amount, "USD");
+            return new Money(amount, "USD");
         }
 
-        public static Franc franc(int amount)
+        public static Money Franc(int amount)
         {
-            return new Franc(amount, "CHF");
+            return new Money(amount, "CHF");
         }
 
-        public string Currency()
-        {
-            return _Currency;
-        }
+        //public string Currency()
+        //{
+        //    return _Currency;
+        //}
 
-        public abstract Money times(int multiplier);
+        public Money times(int multiplier)
+        {
+            return new Money(_Amount * multiplier, _Currency);
+        }
     }
 }
