@@ -8,7 +8,7 @@ namespace WyCash
         {
         }
 
-        public Franc Times(int multiplier)
+        public override Franc times(int multiplier)
         {
             return new Franc(Amount * multiplier);
         }

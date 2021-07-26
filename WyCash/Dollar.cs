@@ -8,7 +8,7 @@ namespace WyCash
         {
         }
 
-        public Dollar Times(int multiplier)
+        public override Dollar times(int multiplier)
         {
             return new Dollar(Amount * multiplier);
         }
