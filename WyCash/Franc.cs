@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace WyCash
+﻿namespace WyCash
 {
     public record Franc : Money
     {
@@ -8,7 +6,7 @@ namespace WyCash
         {
         }
 
-        public override Franc times(int multiplier)
+        public override Money times(int multiplier)
         {
             return new Franc(Amount * multiplier);
         }
