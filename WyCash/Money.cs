@@ -1,14 +1,16 @@
-﻿namespace WyCash
+﻿using System;
+
+namespace WyCash
 {
     public record Money
     {
-        protected int _Amount;
-        protected string _Currency;
+        protected int Amount;
+        protected string Currency;
 
         public Money(int amount, string currency)
         {
-            _Amount = amount;
-            _Currency = currency;
+            Amount = amount;
+            Currency = currency;
         }
 
         //// Definition of Equals and GetHashCode
@@ -46,7 +48,12 @@
 
         public Money times(int multiplier)
         {
-            return new Money(_Amount * multiplier, _Currency);
+            return new Money(Amount * multiplier, Currency);
+        }
+
+        public Money plus(Money addend)
+        {
+            return new Money(Amount + addend.Amount, Currency);
         }
     }
 }

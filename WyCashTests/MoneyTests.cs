@@ -25,5 +25,12 @@ namespace WyCashTests
 
             Assert.False(Money.Dollar(5).Equals(Money.Franc(5)));
         }
+
+        [Fact]
+        public void TestSimpleAddition()
+        {
+            Money sum = Money.Dollar(5).plus(Money.Dollar(5));
+            Assert.Equal(Money.Dollar(10), sum);
+        }
     }
 }
