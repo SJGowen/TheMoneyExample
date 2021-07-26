@@ -2,10 +2,8 @@
 {
     public record Dollar : Money
     {
-        public Dollar(int amount, string currency)
+        public Dollar(int amount, string currency) : base(amount, currency)
         {
-            _Amount = amount;
-            _Currency = currency;
         }
 
         public override Money times(int multiplier)
